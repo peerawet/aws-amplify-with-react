@@ -235,7 +235,6 @@ const DynamicResume = () => {
 
   // Calculate content distribution for pages
   const renderContent = () => {
-
     // Page 1 content
     const page1Content = (
       <div
@@ -243,11 +242,11 @@ const DynamicResume = () => {
         className="resume-page a4 text-slate-900 overflow-hidden flex flex-col relative rounded-2xl shadow-2xl border border-slate-200 mb-8"
       >
         <Header data={resumeData.personalInfo} />
-        <div className="flex-1 flex flex-row gap-6 px-6 py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-          <div className="w-1/3 flex flex-col gap-4 min-w-[240px]">
+        <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-6 px-3 md:px-6 py-4 md:py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+          <div className="w-full md:w-1/3 flex flex-col gap-4 min-w-[240px]">
             <TechStackSection techStack={resumeData.techStack} />
           </div>
-          <div className="w-2/3 flex flex-col gap-4 min-w-0">
+          <div className="w-full md:w-2/3 flex flex-col gap-4 min-w-0">
             <PassionSection />
             <ExperienceSection
               experience={resumeData.experience}
@@ -265,11 +264,11 @@ const DynamicResume = () => {
         className="resume-page a4 text-slate-900 overflow-hidden flex flex-col relative rounded-2xl shadow-2xl border border-slate-200 mb-8"
       >
         <Header data={resumeData.personalInfo} />
-        <div className="flex-1 flex flex-row gap-6 px-6 py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-          <div className="w-1/3 flex flex-col gap-4 min-w-[240px]">
+        <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-6 px-3 md:px-6 py-4 md:py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+          <div className="w-full md:w-1/3 flex flex-col gap-4 min-w-[240px]">
             <EducationSection education={resumeData.education} />
           </div>
-          <div className="w-2/3 flex flex-col gap-4 min-w-0">
+          <div className="w-full md:w-2/3 flex flex-col gap-4 min-w-0">
             <ProjectsSection projects={resumeData.projects} />
           </div>
         </div>
@@ -281,11 +280,11 @@ const DynamicResume = () => {
 
   return (
     <div className="min-h-screen min-w-screen flex items-center justify-center py-4 bg-gradient-to-br from-blue-50 to-pink-50">
-      {/* PDF Export Button */}
+      {/* PDF Export Button - Hidden on mobile */}
       <button
         onClick={generatePDF}
         disabled={isGeneratingPDF}
-        className="fixed top-4 right-4 z-50 px-4 py-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-500 text-white rounded-lg shadow-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="hidden md:flex fixed top-4 right-4 z-50 px-4 py-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-500 text-white rounded-lg shadow-lg text-sm font-medium transition-all duration-200 items-center gap-2 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <span>📄✨</span>
         {isGeneratingPDF ? "Generating PDF..." : "Generate PDF"}
