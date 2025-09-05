@@ -2,7 +2,7 @@ interface PageTwoProps {
   onOpenModal: (src: string, alt: string) => void;
 }
 
-const PageTwo = ({ onOpenModal }: PageTwoProps) => {
+const PageTwo = ({ onOpenModal: _onOpenModal }: PageTwoProps) => {
   const projects = [
     {
       id: 1,

@@ -2,8 +2,6 @@ import { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Header from "./DynamicHeader";
-import Sidebar from "./Sidebar";
-import MainContent from "./MainContent";
 import Modal from "./Modal";
 
 // Define content sections
@@ -212,7 +210,6 @@ const DynamicResume = () => {
           scale: 2,
           useCORS: true,
           allowTaint: true,
-          letterRendering: true,
           backgroundColor: "#ffffff",
           width: page.offsetWidth,
           height: page.offsetHeight,
@@ -238,8 +235,6 @@ const DynamicResume = () => {
 
   // Calculate content distribution for pages
   const renderContent = () => {
-    const pages = [];
-    let currentPageContent = [];
 
     // Page 1 content
     const page1Content = (
