@@ -6,6 +6,7 @@ interface PersonalInfo {
   phone: string;
   email: string;
   github: string;
+  linkedin: string;
   website: string;
   profileImage: string;
 }
@@ -88,6 +89,17 @@ const Header = ({ data }: HeaderProps) => {
             rel="noopener noreferrer"
           >
             {data.github}
+          </a>
+        </div>
+        <div className="flex items-center justify-center md:justify-end gap-1">
+          LinkedIn:
+          <a
+            href={`https://${data.linkedin}`}
+            className="text-blue-600 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            in/peerawet-chursuk
           </a>
         </div>
       </div>

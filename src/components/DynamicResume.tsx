@@ -14,6 +14,7 @@ const resumeData = {
     phone: "065-502-6360",
     email: "peerawet1996@gmail.com",
     github: "peerawet",
+    linkedin: "www.linkedin.com/in/peerawet-chursuk",
     website: "https://resume.forifi.xyz",
     profileImage: "/fame-nobg.png",
   },
@@ -32,8 +33,8 @@ const resumeData = {
       { name: "CI", level: 8 },
     ],
     databases: [
-      { name: "MySQL", level: 9 },
-      { name: "Postgret", level: 9 },
+      { name: "MySQL", level: 8 },
+      { name: "Postgret", level: 8 },
       { name: "MSSQL", level: 9 },
       { name: "Mongo", level: 6 },
       { name: "Dynamo", level: 6 },
@@ -82,7 +83,7 @@ const resumeData = {
       id: 1,
       position: "Developer",
       company: "Phillip Asset Management Co., Ltd.",
-      period: "Jan 2025 - Current",
+      period: "Jan 2025 - Aug 2025",
       responsibilities: [
         "🗂️ Infrastructure & Project Setup",
         "🧩 System Development",
