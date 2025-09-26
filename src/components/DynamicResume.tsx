@@ -482,18 +482,14 @@ const ExperienceSection = ({
                   {resp.includes("Updated frontend to modern style") && (
                     <div className="inline-flex gap-1 ml-2">
                       <button
-                        onClick={() =>
-                          onOpenModal("/old.png", "Old Design")
-                        }
+                        onClick={() => onOpenModal("/old.png", "Old Design")}
                         className="text-xs text-blue-500"
                       >
                         Before
                       </button>
                       <span className="text-xs text-gray-400">|</span>
                       <button
-                        onClick={() =>
-                          onOpenModal("/new.png", "New Design")
-                        }
+                        onClick={() => onOpenModal("/new.png", "New Design")}
                         className="text-xs text-blue-500"
                       >
                         After
