@@ -83,7 +83,7 @@ const resumeData = {
       id: 1,
       position: "Developer",
       company: "Phillip Asset Management Co., Ltd.",
-      period: "Jan 2025 - Jul 2025",
+      period: "Jan 2025 - June 2025",
       responsibilities: [
         "🗂️ Infrastructure & Project Setup",
         "🧩 System Development",
