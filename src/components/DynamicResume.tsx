@@ -89,12 +89,7 @@ const resumeData = {
         "🧩 System Development",
         "🛠️ Maintain Legacy System",
       ],
-      technologies: [
-        "💻 ReactTS, ExpressJS, CodeIgniter",
-        "🐳 Docker compose containerization",
-        "☁️ Nutanix infrastructure",
-        "🤖 Integrate Ollama for users to ask questions about CRM (Mistral Model)",
-      ],
+      technologies: [],
       links: [
         {
           text: "see detail",
@@ -108,13 +103,38 @@ const resumeData = {
     },
     {
       id: 2,
+      position: "Frontend Developer (Contract)",
+      company: "CSR Consulting",
+      period: "Oct 2024 - Dec 2024",
+      responsibilities: [
+        "🎨 Updated frontend to modern style according to figma from web designer",
+        "🔄 Modernized legacy UI components",
+        "📱 Responsive design",
+      ],
+      technologies: [],
+      links: [],
+    },
+    {
+      id: 3,
       position: "Junior Web Programmer",
       company: "Orange Technology Solution Company Limited",
-      period: "Apr 2024 - Oct 2024",
+      period: "Apr 2024 - Jul 2024",
       responsibilities: [
         "📝 Gathered requirements directly from the customer",
         "🚀 Developed a program for flight forwarding",
         "💬 Line chat bot",
+      ],
+      technologies: [],
+      links: [],
+    },
+    {
+      id: 4,
+      position: "Production Engineer",
+      company: "Asahi Intecc (Thailand) Co., Ltd.",
+      period: "Nov 2018 - Apr 2020",
+      responsibilities: [
+        "🔬 Performed process validation when manufacturing conditions changed",
+        "🏥 Worked with medical device manufacturing standards",
       ],
       technologies: [],
       links: [],
@@ -248,7 +268,6 @@ const DynamicResume = () => {
             <TechStackSection techStack={resumeData.techStack} />
           </div>
           <div className="w-full md:w-2/3 flex flex-col gap-4 min-w-0">
-            <PassionSection />
             <ExperienceSection
               experience={resumeData.experience}
               onOpenModal={openModal}
@@ -398,23 +417,6 @@ const TechSectionWithLevels = ({
   );
 };
 
-const PassionSection = () => (
-  <section className="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg p-6 h-fit border border-slate-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-    <h2 className="font-bold text-slate-700 mb-4 flex items-center gap-2 text-lg">
-      <span className="text-purple-600">🚀</span> Passion to Profession
-    </h2>
-    <div className="rounded-xl border border-purple-100 bg-gradient-to-br from-purple-50 to-pink-50 p-5 flex flex-col gap-3">
-      <p className="text-sm text-slate-700 leading-relaxed">
-        <span className="text-amber-600">📝</span> I started my career as a
-        Production Engineer for 2 years before fully transitioning into software
-        development a field I truly enjoy. I've grown through hands-on
-        experience, building real-world projects, learning fast, and never
-        stopping at "just enough."
-      </p>
-    </div>
-  </section>
-);
-
 const ExperienceSection = ({
   experience,
   onOpenModal,
@@ -461,12 +463,7 @@ const ExperienceSection = ({
                   {/* Add modal triggers for specific items */}
                   {resp.includes("flight forwarding") && (
                     <button
-                      onClick={() =>
-                        onOpenModal(
-                          "https://lxyqtapnnytsigmrikoq.supabase.co/storage/v1/object/public/utill//express.png",
-                          "Express"
-                        )
-                      }
+                      onClick={() => onOpenModal("/express.png", "Express")}
                       className="text-xs text-blue-500 ml-2"
                     >
                       View
@@ -475,10 +472,38 @@ const ExperienceSection = ({
                   {resp.includes("Line chat bot") && (
                     <button
                       onClick={() =>
-                        onOpenModal(
-                          "https://lxyqtapnnytsigmrikoq.supabase.co/storage/v1/object/public/utill//chatbot.png",
-                          "Linechatbot"
-                        )
+                        onOpenModal("/line-chat-bot.png", "Linechatbot")
+                      }
+                      className="text-xs text-blue-500 ml-2"
+                    >
+                      View
+                    </button>
+                  )}
+                  {resp.includes("Updated frontend to modern style") && (
+                    <div className="inline-flex gap-1 ml-2">
+                      <button
+                        onClick={() =>
+                          onOpenModal("/old.png", "Old Design")
+                        }
+                        className="text-xs text-blue-500"
+                      >
+                        Before
+                      </button>
+                      <span className="text-xs text-gray-400">|</span>
+                      <button
+                        onClick={() =>
+                          onOpenModal("/new.png", "New Design")
+                        }
+                        className="text-xs text-blue-500"
+                      >
+                        After
+                      </button>
+                    </div>
+                  )}
+                  {resp.includes("Responsive design") && (
+                    <button
+                      onClick={() =>
+                        onOpenModal("/responsive.png", "Responsive Design")
                       }
                       className="text-xs text-blue-500 ml-2"
                     >
